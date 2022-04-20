@@ -27,12 +27,6 @@ public class Main {
                     System.out.printf("Unrecognized key word at start of '%s' %n", input);
                     continue;
             }
-
-
-            /*
-            if(input.equals("exit")) System.exit(0);
-            else System.out.printf("Unrecognized command '%s'%n", input);
-             */
         }
     }
 
