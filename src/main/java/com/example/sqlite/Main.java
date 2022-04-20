@@ -27,19 +27,21 @@ public class Main {
                     System.out.printf("Unrecognized key word at start of '%s' %n", input);
                     continue;
             }
-
-
-            /*
-            if(input.equals("exit")) System.exit(0);
-            else System.out.printf("Unrecognized command '%s'%n", input);
-             */
         }
     }
 
+    /**
+     * Prints prompt to console.
+     */
     private static void printPrompt(){
         System.out.print("db > ");
     }
 
+    /**
+     * Wrapper for meta commands.
+     * @param command command entered in console
+     * @return 0 if command exists, else -1
+     */
     private static int doMetaCommand(String command){
         if(command.equals(".exit")){
             System.exit(0);
@@ -48,6 +50,11 @@ public class Main {
         return -1;
     }
 
+    /**
+     * Detects what statement type was entered.
+     * @param input user input
+     * @return 0 if statement type exists, else -1
+     */
     private static int prepareStatement(String input){
         Statement stmt;
         if (input.startsWith("insert")){
