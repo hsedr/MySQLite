@@ -39,7 +39,7 @@ public class Main {
 
     /**
      * Wrapper for meta commands.
-     * @param command command entered in console
+     * @param command entered meta command
      * @return 0 if command exists, else -1
      */
     private static int doMetaCommand(String command){
@@ -51,8 +51,8 @@ public class Main {
     }
 
     /**
-     * Detects what statement type was entered.
-     * @param input user input
+     * Wrapper for statement types.
+     * @param input entered SQL statement
      * @return 0 if statement type exists, else -1
      */
     private static int prepareStatement(String input){
