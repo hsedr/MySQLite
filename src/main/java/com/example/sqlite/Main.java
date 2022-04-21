@@ -1,5 +1,9 @@
 package com.example.sqlite;
 
+import com.example.sqlite.dfa.Insertion;
+import com.example.sqlite.dfa.Selection;
+import com.example.sqlite.dfa.Statement;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +13,6 @@ public class Main {
             printPrompt();
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine().trim();
-            //System.out.println(input);
             String head = input.split("")[0];
             if (head.equals(".")){
                 switch (doMetaCommand(input)){
@@ -25,7 +28,6 @@ public class Main {
                     break;
                 case (-1):
                     System.out.printf("Unrecognized key word at start of '%s' %n", input);
-                    continue;
             }
         }
     }
@@ -57,17 +59,19 @@ public class Main {
      */
     private static int prepareStatement(String input){
         Statement stmt;
-        if (input.startsWith("insert")){
+        if (input.startsWith("insert into")){
             stmt = new Insertion();
-            stmt.execute();
+            if(stmt.matches(input))
+                stmt.execute(input);
             return 0;
         }
         if (input.startsWith("select")){
             stmt = new Selection();
-            stmt.execute();
+            if(stmt.matches(input))
+                stmt.execute(input);
+            else System.out.println("Statement doesn't match");
             return 0;
         }
         return -1;
     }
-
 }
