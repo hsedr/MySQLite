@@ -33,7 +33,8 @@ public class Name implements DFAutomaton{
     /**
      * Takes current state and a character and determines
      * following state.
-     * Does not accept names starting with a number.
+     * Does not accept names starting with a number or 
+     * that contain an special character.
      * @param currentState state the DFA is currently at
      * @param character    current char
      * @return δ: Q x Σ -> Q
