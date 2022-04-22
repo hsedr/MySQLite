@@ -2,7 +2,7 @@ package com.example.sqlite;
 
 import com.example.sqlite.dfa.Insertion;
 import com.example.sqlite.dfa.Selection;
-import com.example.sqlite.dfa.Statement;
+import com.example.sqlite.dfa.DFAutomaton;
 
 import java.util.Scanner;
 
@@ -58,7 +58,7 @@ public class Main {
      * @return 0 if statement type exists, else -1
      */
     private static int prepareStatement(String input){
-        Statement stmt;
+        DFAutomaton stmt;
         if (input.startsWith("insert into")){
             stmt = new Insertion();
             if(stmt.matches(input))

@@ -1,8 +1,8 @@
 package com.example.sqlite.dfa;
 /**
- * Interface for a deterministic finite automata
+ * Interface for a deterministic finite automaton
  */
-public interface Statement {
+public interface DFAutomaton {
 
     //interprets entered statement
     void execute(String statement);

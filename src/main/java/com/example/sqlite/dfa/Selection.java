@@ -3,7 +3,7 @@ package com.example.sqlite.dfa;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Selection extends Shared implements Statement {
+public class Selection extends Shared implements DFAutomaton {
 
     final static int BEGINNING_STATE = 0;
     final static int END_STATE = 7;
@@ -11,10 +11,12 @@ public class Selection extends Shared implements Statement {
     /**
      * Interprets statement.
      * //TODO
+     *
      * @param statement entered statment
      */
     @Override
     public void execute(String statement) {
+        //TODO
         System.out.println("Word is an element of SQL");
         System.out.println("Executed.");
     }
@@ -28,8 +30,8 @@ public class Selection extends Shared implements Statement {
     @Override
     public boolean matches(String word) {
         int state = BEGINNING_STATE;
-        for(Object character: parseWord(word)){
-            state = this.nextState(state, (String) character);
+        for (Object character : parseWord(word)) {
+            state = this.nextState(state, String.valueOf(character));
         }
         return state == END_STATE;
     }
@@ -38,29 +40,28 @@ public class Selection extends Shared implements Statement {
      * Takes current state and a character and determines
      * following state
      * @param currentState state the DFA is currently at
-     * @param character current char
+     * @param character    current char
      * @return δ: Q x Σ -> Q
      */
     @Override
     public int nextState(int currentState, String character) {
-        switch(currentState){
+        switch (currentState) {
             case 0:
                 return character.equals("select") ? 1 : 8;
             case 1:
-                if(character.equals("*")) return 2;
-                if(containsColumn(character)) return 3;
+                if (character.equals("*")) return 2;
+                if (new Name().matches(character)) return 3;
                 else return 8;
             case 2:
                 return character.equals("from") ? 4 : 8;
             case 3:
-                if(character.equals("from")) return 4;
+                if (character.equals("from")) return 4;
                 if (character.equals(",")) return 5;
                 else return 8;
             case 4:
-                return containsTable(character) ? 6 : 8;
+                return new Name().matches(character) ? 6 : 8;
             case 5:
-                if(containsColumn(character)) return 3;
-                else return 8;
+                return new Name().matches(character) ? 3 : 8;
             case 6:
                 return character.equals(";") ? 7 : 8;
             case 8:
@@ -71,20 +72,19 @@ public class Selection extends Shared implements Statement {
 
     /**
      * Splits the String into each unique character of Σ (Alphabet).
-     * Note: This method is space sensitive and needs further optimization.
      * @param word entered String
      * @return Array of chars
      */
-    public Object[] parseWord(String word){
-        if(word.charAt(word.length()-1) == ';'){
-            word = word.substring(0, word.length()-1);
+    public Object[] parseWord(String word) {
+        if (word.charAt(word.length() - 1) == ';') {
+            word = word.substring(0, word.length() - 1);
         }
-        ArrayList<String> result = new ArrayList<String>(List.of(word.split(" ")));
+        ArrayList<String> result = new ArrayList<>(List.of(word.split("\\s+")));
         int index = 1;
-        if(!result.get(index).equals("*")) {
+        if (!result.get(index).equals("*")) {
             String[] columns = result.get(index).split("((?<=,)|(?=,))");
             result.remove(index);
-            for (String str : columns){
+            for (String str : columns) {
                 result.add(index, str);
                 index++;
             }
@@ -92,6 +92,6 @@ public class Selection extends Shared implements Statement {
         result.add(";");
         return result.toArray();
     }
-
-
 }
+
+
