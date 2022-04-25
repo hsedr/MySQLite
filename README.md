@@ -8,3 +8,7 @@ Currently I am working on a tokenizer and parser for simple SQL Select-Statement
 
 **Note** that the method "private Object[] parseWord(String word)" of each DFA soon will be replaced by a lexical analyzer implementation.
 
+## Links
+Go to [this Website]{https://forcedotcom.github.io/phoenix/index.html#expression}, to see the the SQL Grammar.
+I am using [Flaci]{https://flaci.com/home/} to visualize the Automatons.
+
