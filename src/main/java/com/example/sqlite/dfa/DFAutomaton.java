@@ -4,9 +4,6 @@ package com.example.sqlite.dfa;
  */
 public interface DFAutomaton {
 
-    //interprets entered statement
-    void execute(String statement);
-
     //accepts or rejects an entered String
     boolean matches(String word);
 

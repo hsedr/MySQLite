@@ -7,13 +7,7 @@ public class Name implements DFAutomaton{
 
     final static int BEGINNING_STATE = 0;
     final static int END_STATE = 1;
-
-    @Override
-    public void execute(String statement) {
-        //TODO
-        System.out.println("Word is an element of SQL");
-        System.out.println("Executed.");
-    }
+    final static int TRAP = 2;
 
     /**
      * Accepts or rejects an entered String.
@@ -42,13 +36,13 @@ public class Name implements DFAutomaton{
     public int nextState(int currentState, String character) {
         switch(currentState){
             case 0:
-                return character.matches("[a-zA-Z]") ? 1 : 2;
+                return character.matches("[a-zA-Z]") ? 1 : TRAP;
             case 1:
-                return character.matches("[a-zA-Z0-9]") ? 1 : 2;
-            case 2:
-                return 2;
+                return character.matches("[a-zA-Z0-9]") ? 1 : TRAP;
+            case TRAP:
+                return TRAP;
         }
-        return 0;
+        return -1;
     }
 
     /**
