@@ -1,6 +1,6 @@
 # MYSQLite
 
-In this project I want to sharpen my Java skills, aswell as my understanding of databases and compiler.
+In this project I want to sharpen my Java skills, aswell as my understanding of databases and compilers.
 I am following the tutorial published by [cstack](https://github.com/cstack/db_tutorial) on Github.
 
 ## Status
