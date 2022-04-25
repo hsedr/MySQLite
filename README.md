@@ -1,8 +1,10 @@
 # MYSQLite
 
-In this project I want to sharpen my Java skills, aswell as my understanding of databases.
-I am following the tutorial published by cstack on github: https://github.com/cstack/db_tutorial.
+In this project I want to sharpen my Java skills, aswell as my understanding of databases and compiler.
+I am following the tutorial published by [cstack](https://github.com/cstack/db_tutorial) on Github.
 
-Currently I am working on a parser for simple SQL Statements.
+## Status
+Currently I am working on a tokenizer and parser for simple SQL Select-Statements. 
 
-Let's see where it'll take me.
+**Note** that the method "private Object[] parseWord(String word)" of each DFA soon will be replaced by a lexical analyzer implementation.
+
