@@ -18,6 +18,7 @@ public class Term implements DFAutomaton{
         return state == END_STATE;
     }
 
+    //TODO varchars and character shall be matched with regular Expression "'[a-zA-Z]" | "[a-zA-Z0-9]*"
     @Override
     public int nextState(int currentState, String character) {
         switch (currentState){
@@ -27,7 +28,7 @@ public class Term implements DFAutomaton{
                 if(character.equals("true") || character.equals("false")) return 3;
                 return new Name().matches(character) ? 3 : TRAP;
             case 1:
-                return character.matches("\\w+") ? 2 : TRAP;
+                return character.matches("(.*)") ? 2 : TRAP;
             case 2:
                 return character.equals("'") ? 3 : TRAP;
             case 3:

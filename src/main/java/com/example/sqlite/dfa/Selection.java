@@ -37,7 +37,7 @@ public class Selection extends Shared implements DFAutomaton {
             case 0:
                 return character.equals("select") ? 1 : TRAP;
             case 1:
-                if (character.equals("*")) return 2;
+                if (character.equals("all")) return 2;
                 if (new Name().matches(character)) return 3;
                 else return TRAP;
             case 2:

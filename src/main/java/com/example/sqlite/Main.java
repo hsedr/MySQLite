@@ -61,14 +61,12 @@ public class Main {
         DFAutomaton stmt;
         if (input.startsWith("insert into")){
             stmt = new Insertion();
-            if(stmt.matches(input))
-                stmt.execute(input);
+            if(stmt.matches(input));
             return 0;
         }
         if (input.startsWith("select")){
             stmt = new Selection();
-            if(stmt.matches(input))
-                stmt.execute(input);
+            if(stmt.matches(input));
             else System.out.println("Statement doesn't match");
             return 0;
         }
