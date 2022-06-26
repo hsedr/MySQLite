@@ -1,0 +1,7 @@
+{a : "a", OpenPar : "\(", ClosePar : "\)", Plus : "\+", Mul : "\*"}
+Start : E;
+E : T X | EPSILON;
+X : Plus T X | EPSILON;
+T : F Y;
+Y : Mul F Y | EPSILON;
+F : OpenPar E ClosePar | a;

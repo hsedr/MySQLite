@@ -1,0 +1,4 @@
+{WH : "WH", Number : "[0-9]|[1-9][0-9]*", RE : "RE", VW : "VW", OpenBr : "\[", CloseBr : "\]"}
+Start : ANWEISUNGEN;
+ANWEISUNGEN : ANWEISUNG ANWEISUNGEN | EPSILON;
+ANWEISUNG : WH Number OpenBr ANWEISUNGEN CloseBr | RE Number | VW Number;

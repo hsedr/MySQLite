@@ -1,0 +1,5 @@
+{a : "a", b : "b"}
+Start : S;
+S : a A b | b B a | EPSILON;
+A : a A b | EPSILON;
+B : b B a | EPSILON;

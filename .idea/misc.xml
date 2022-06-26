@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ANTLRGenerationPreferences">
+    <option name="perGrammarGenerationSettings">
+      <list>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/src/main/java/com/example/sqlite/antlr/mysqlite.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="Java" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/src/main/java/com/example/sqlite/antlr/MySQLiteParser.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\haase\_________CODING___________\IdeaProjects\SQLite\src\main\java\com\example\sqlite\antlr" />
+          <option name="libDir" value="C:\Users\haase\_________CODING___________\IdeaProjects\SQLite\src\main\java\com\example\sqlite\antlr" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="Java" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/src/main/java/com/example/sqlite/antlr/parser/grammar/MySQLiteParser.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\haase\_________CODING___________\IdeaProjects\SQLite\src\main\java\com\example\sqlite\antlr\parser" />
+          <option name="libDir" value="C:\Users\haase\_________CODING___________\IdeaProjects\SQLite\src\main\java\com\example\sqlite\antlr\parser\grammar" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="Java" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/src/main/java/com/example/sqlite/grammar/MySQLiteParser.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\haase\antlr4\sample" />
+          <option name="libDir" value="C:\Users\haase\_________CODING___________\IdeaProjects\SQLite\src\main\java\com\example\sqlite\grammar" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="Java" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+      </list>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
